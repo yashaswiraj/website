@@ -1,4 +1,3 @@
-{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -8,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    {% load static %}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
         integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -367,7 +365,6 @@
                         </li>
                         <li>
                             <form class="form-inline my-2 my-lg-2" method='POST' action='/menu/search/'>
-                                {% csrf_token %}
                                 <input id="input" class="form-control mr-sm-2 my-1" type="search" name="search"
                                     placeholder="Search">
                                 <button id="btn1" class="btn btn-outline-success my-2 my-sm-0"
@@ -397,17 +394,15 @@
         </div>
 
         <section class="row">
-            {% for product in allProds %}
             
             <div class=" col-lg-4 col-md-6 col-sm-6 col-xs-12 col-xxs-12">
-                <a href="{{ product.0.category }}/">
+                <a href="">
                     <div class="category-tile">
-                        <img width="200" height="200" src='/media/{{ product.0.image}}' alt="Lunch">
-                        <span>{{ product.0.category }}</span>
+                        <img width="200" height="200" src="../menu-tile.jpg" alt="Lunch">
                     </div>
                 </a>
             </div>
-            {% endfor %}
+           
 
         </section>
 
